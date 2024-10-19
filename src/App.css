@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.App {
+  height: 100vh;
+  background: linear-gradient(
+    90deg,
+    #000000,
+    #12091d,
+    #191034,
+    #1f144c,
+    #1f144c,
+    #191034,
+    #12091d,
+    #000000
+  );
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  .nav {
+    width: 1000px;
+    background-color: rebeccapurple;
+  }
+}
+
+/* About Section */
+.about {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+/* Projects Section */
+.projects {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+/* Contact Section */
+.contact {
+  height: 100vh;
+  scroll-snap-align: center;
+}
