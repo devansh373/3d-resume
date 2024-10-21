@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 .App {
   height: 100vh;
@@ -25,15 +26,113 @@
 .hero {
   height: 100vh;
   scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
+.hero-section {
+  height: 100vh;
+  width: 1000px;
+  /* scroll-snap-align: center; */
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.hero-section .left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-section .left h1 {
+  font-size: 60px;
+}
+.hero-section .left div {
+  display: flex;
+  gap: 10px;
+}
+.hero-section .left div p {
+  font-size: 25px;
+}
+.hero-section .left > p {
+  font-size: 18px;
+}
+.hero-section .left button {
+  border: 1px solid transparent;
+  width: 100px;
+  padding: 5px;
+  color: white;
+  background-color: rgb(106 21 143);
+  border-radius: 10px;
+}
+
+.hero-section .left button:hover {
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.right {
+  flex: 3;
+  position: relative;
+}
+.hero-right-img {
+  /* width: 800px; */
+  height: 400px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  animation: animate 2s infinite ease alternate;
+}
+@keyframes animate {
+  100% {
+    transform: translateY(20px);
+  }
+}
+
 /* Navbar */
 .navbar {
   display: flex;
   justify-content: center;
-  .nav {
-    width: 1000px;
-    background-color: rebeccapurple;
-  }
+}
+.nav {
+  width: 1000px;
+  /* background-color: rebeccapurple; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 10px 5px; */
+  margin: 10px 0;
+}
+.nav-left-ul,
+.nav-right-ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+}
+.nav li {
+  font-size: 16px;
+}
+.hire-now {
+  width: 90px;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(106 21 143);
+  color: white;
+  font-size: 16px;
+}
+.hire-now:hover {
+  border: 1px solid white;
 }
 
 /* About Section */
@@ -41,11 +140,137 @@
   height: 100vh;
   scroll-snap-align: center;
 }
+.about-section {
+  height: 100vh;
+  width: 1000px;
+  /* scroll-snap-align: center; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+}
+
+.about .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.about .right h1 {
+  font-size: 60px;
+}
+.about .right div {
+  display: flex;
+  gap: 10px;
+}
+.about .right div p {
+  font-size: 25px;
+}
+.about .right > p {
+  font-size: 18px;
+}
+.about .right button {
+  border: 1px solid transparent;
+  width: 100px;
+  padding: 5px;
+  color: white;
+  background-color: rgb(106 21 143);
+  border-radius: 10px;
+}
+
+.about .right button:hover {
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.about .left {
+  flex: 1;
+  position: relative;
+}
+.about-left-img {
+  height: 400px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  animation: animate 2s infinite ease alternate;
+}
+@keyframes animate {
+  100% {
+    transform: translateY(20px);
+  }
+}
 
 /* Projects Section */
 .projects {
   height: 100vh;
   scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.projects-section {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.projects-section .left {
+  flex: 1;
+}
+
+.projects-section .left ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.projects-section .left li {
+  width: fit-content;
+  list-style: none;
+  font-size: 60px;
+  font-weight: bold;
+  cursor: pointer;
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.projects-section .left li::after {
+  content: attr(text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: pink;
+  width: 0%;
+  overflow: hidden;
+  /* this overflow is the main, ::after content is already outside the boundary of the main element, uska matlab hi after h, after the main element, thats why , overflow hidden hides it */
+  white-space: nowrap;
+}
+.projects-section .left li:hover::after {
+  animation: animate2 0.2s linear both;
+}
+
+@keyframes animate2 {
+  to {
+    width: 100%;
+  }
+}
+/* .hello {
+  width: 100px;
+  background-color: red;
+  height: 50px;
+  position: absolute;
+  z-index: -1;
+  animation: animate2 0.5s ease both;
+} */
+
+.projects-section .right {
+  flex: 1;
 }
 
 /* Contact Section */
